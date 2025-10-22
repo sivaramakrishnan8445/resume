@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Siva Rama Krishnan — Resume</title>
+
+  <!-- Font & Icons -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-wH6f6k5bq3lYVtq6V0zE6e3Gm6c0sFqv0lXv6+ZlYQk4H1p1J3dKQ1wQ1q2h8Y3VZ0q3Q1a0b2c3d4e5f6g7==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root{
+      --accent:brown; 
+      --muted:#6b7280;
+      --bg:#f6f8fb;
+      --card:white;
+      --sidebar:#f5f2ef;
+      --max-width:1000px;
+      --page-padding:28px;
+    }
+
+    * { box-sizing: border-box; }
+    body{
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: var(--bg);
+      color: #0b1720;
+      display:flex;
+      justify-content:center;
+      padding:20px;
+    }
+
+    .resume {
+      width: calc(210mm - 40px);
+      max-width: var(--max-width);
+      background: var(--card);
+      box-shadow: 0 8px 30px rgba(8,35,63,0.08);
+      border-radius: 10px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 0;
+    }
+
+    .header {
+      grid-column: 1 / -1;
+      background: linear-gradient(90deg, var(--accent), grey);
+      color: white;
+      padding: 20px var(--page-padding);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .hdr-left {
+      display:flex;
+      align-items:center;
+      gap:16px;
+    }
+    .photo {
+      width: 100px;
+      height: 100px;
+      border-radius:50%;
+      overflow:hidden;
+      border:2px solid white;
+      flex-shrink:0;
+    }
+    .photo img { width:100%; height:100%; object-fit:cover; }
+    .name {
+      margin:0;
+      font-size:22px;
+      letter-spacing:0.6px;
+      font-weight:700;
+      text-transform:uppercase;
+    }
+    .title { margin:4px 0 0 0; opacity:0.95; font-weight:500; font-size:13px; }
+
+    .hdr-right.small { text-align:right; }
+    .hdr-right .muted { opacity:0.85; font-size:13px; }
+
+    .main { padding:20px var(--page-padding); }
+    .side { 
+      background: var(--sidebar); 
+      padding:20px var(--page-padding); 
+      color: var(--accent); /* Sidebar font color changed to brown */
+    }
+    .side a { color: var(--accent); text-decoration: none; }
+    .side a:hover { text-decoration: underline; }
+
+    .section { margin-bottom:14px; }
+    .section h3{
+      margin:0 0 8px 0;
+      font-size:14px;
+      color:var(--accent);
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:0.6px;
+    }
+
+    .muted { color:var(--muted); font-size:13px; }
+    p { margin:6px 0; font-size:14px; }
+    .small { font-size:13px; color:var(--muted); }
+
+    .item { margin-bottom:10px; }
+    .item .title-row { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
+    .item .role { font-weight:600; font-size:14px; margin:0; }
+    .item .when { font-size:13px; color:var(--muted); white-space:nowrap; }
+
+    .chips { display:flex; flex-wrap:wrap; gap:8px; }
+    .chip { background:white; border-radius:999px; padding:6px 10px; font-size:13px; border:1px solid rgba(10,102,194,0.08); }
+
+    .contact-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; }
+    .contact-list li { display:flex; gap:10px; align-items:center; font-size:14px; color:var(--accent); }
+    .contact-list li .icon { width:26px; text-align:center; color:var(--accent); }
+
+    .project-list { list-style:none; padding:0; margin:0; }
+    .project-list li { margin-bottom:8px; }
+
+    .achievements ul { padding-left:18px; margin:0; }
+
+    .footer {
+      grid-column: 1 / -1;
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 12px var(--page-padding);
+      font-size: 13px;
+    }
+
+    @media (max-width:900px){
+      .resume { grid-template-columns: 1fr; width:100%; margin:0 10px; }
+      .header { padding:18px; }
+      .main, .side { padding:16px; }
+    }
+
+    @media print {
+      body { background:white; padding:0; }
+      .resume { box-shadow:none; border-radius:0; width:210mm; max-width:100%; }
+      a::after { content:none !important; }
+      .name { font-size:20px; }
+      .header { padding:12px 16px; }
+      .main, .side { padding:12px 16px; }
+      .chips .chip { padding:4px 8px; font-size:12px; }
+      .section h3 { font-size:12px; }
+      .item .role { font-size:13px; }
+      .item { page-break-inside: avoid; }
+    }
+    .mb8 { margin-bottom:8px; }
+    .mt8 { margin-top:8px; }
+  </style>
+</head>
+<body>
+
+<main class="resume">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="hdr-left">
+      <div class="photo">
+        <img src="c:\Users\DELL\Desktop\resume.html\photo.jpg.jpg" alt="Siva Rama Krishnan">
+      </div>
+      <div>
+        <h1 class="name">Siva Rama Krishnan</h1>
+        <div class="title">Aspiring Front-End / Full-Stack Engineer · UI/UX Designer</div>
+      </div>
+    </div>
+    <div class="hdr-right small">
+      <div style="font-weight:700;">Available for internships / Full-time</div>
+      <div class="muted">Thenthiruperai, Thoothukudi</div>
+    </div>
+  </header>
+
+  <!-- Main Column -->
+  <section class="main">
+
+    <!-- Profile -->
+    <div class="section" id="profile">
+      <h3><i class="fa-solid fa-user"></i> Profile</h3>
+      <p class="small">
+        Looking for a competitive and encouraging work atmosphere to showcase my technical skills in a practical manner.
+        Quick learner and problem solver with a strong desire to gain experience and provide innovative contributions to the organization.
+      </p>
+    </div>
+
+    <!-- Education -->
+    <div class="section" id="education">
+      <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+      <div class="item">
+        <div class="title-row">
+          <div><div class="role">BE — Computer Science Engineering</div><div class="small muted">St. Mother Theresa Engineering College</div></div>
+          <div class="when muted">2021 — 2025 · CGPA 7.8</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="title-row">
+          <div><div class="role">HSC</div><div class="small muted">Margoschis Higher Secondary School</div></div>
+          <div class="when muted">2020 — 2021 · 74%</div>
+        </div>
+      </div>
+      <div class="item">
+        <div class="title-row">
+          <div><div class="role">SSLC</div><div class="small muted">Margoschis Higher Secondary School</div></div>
+          <div class="when muted">2018 — 2019 · 58%</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="section" id="experience">
+      <h3><i class="fa-solid fa-briefcase"></i> Experience</h3>
+      <div class="item">
+        <div class="title-row">
+          <div><div class="role">UI/UX Design Intern — Cloud Hawk Technologies</div><div class="small muted">Front-end & Design</div></div>
+          <div class="when muted">Aug 2024</div>
+        </div>
+        <p class="small">Gained hands-on exposure to front-end development using HTML, CSS, and JavaScript. Built UI prototypes and learned design-to-code workflows.</p>
+      </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section" id="projects">
+      <h3><i class="fa-solid fa-code"></i> Projects</h3>
+      <ul class="project-list small">
+        <li>
+          <strong>Helmet Detection & Number Plate Recognition</strong>
+          <div class="muted">Python · Image Processing · CNN</div>
+          <div class="small mt8">Implemented a computer vision system to detect helmet violations and extract number plates. Front-end UI built with HTML/CSS/JS; data stored using MySQL.</div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Achievements -->
+    <div class="section achievements" id="achievements">
+      <h3><i class="fa-solid fa-trophy"></i> Achievements</h3>
+      <ul class="small">
+        <li>3rd Prize — Python Coding at National Level Technical Symposium (Einstein Engineering College)</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- Sidebar -->
+  <aside class="side">
+
+    <!-- Contact -->
+    <div class="section" id="contact">
+      <h3><i class="fa-solid fa-address-card"></i> Contact</h3>
+      <ul class="contact-list">
+        <li><span class="icon"><i class="fa-solid fa-phone"></i></span> <a href="tel:+916381451058">+91 63814 51058</a></li>
+        <li><span class="icon"><i class="fa-solid fa-envelope"></i></span> <a href="mailto:zsiva550@gmail.com">zsiva550@gmail.com</a></li>
+        <li><span class="icon"><i class="fa-solid fa-location-dot"></i></span> Thenthiruperai, Thoothukudi</li>
+      </ul>
+    </div>
+
+    <!-- Skills -->
+    <div class="section" id="skills">
+      <h3><i class="fa-solid fa-list-check"></i> Skills</h3>
+      <div class="mb8">
+        <div>Technical</div>
+        <div class="chips mt8">
+          <span class="chip">Python</span><span class="chip">C</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">JavaScript</span><span class="chip">MySQL</span><span class="chip">GitHub</span><span class="chip">UI/UX Design</span>
+        </div>
+      </div>
+      <div class="mt8">
+        <div>Behavioral</div>
+        <ul class="small" style="padding-left:16px; margin-top:8px;">
+          <li>Good Communication</li>
+          <li>Analytical Skills</li>
+          <li>Teamwork</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Courses -->
+    <div class="section" id="courses">
+      <h3><i class="fa-solid fa-certificate"></i> Courses</h3>
+      <div>
+        <div>Journey to Cloud: Envisioning Your Solution — IBM (Oct 2023)</div>
+        <div>BIG DATA-201 — Infosys (Oct 2024)</div>
+        <div>Microsoft Office Specialist: Word Advanced (Nov 2022)</div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- Footer -->
+  <footer class="footer">
+    © 2025 Siva Rama Krishnan — All Rights Reserved
+  </footer>
+
+</main>
+
+</body>
+</html>
